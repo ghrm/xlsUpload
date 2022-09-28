@@ -5,6 +5,15 @@
                 Listado de Cuentas
             </td>
         </tr>
+
+        <tr>
+            <td style="width:70px;"><input style="width:70px;" id="txtacc" name="txtacc" [(ngModel)]="txtacc" /></td>
+            <td style="width:100px;"><input style="width:100px;" id="txtacct" name="txtacct" [(ngModel)]="txtacct"/></td>
+            <td style="width:300px;"><input style="width:300px;" id="txtdesc" name="txtdesc" [(ngModel)]="txtdesc"/></td>
+            <td style="width:200px;"><input style="width:200px;" id="txtdep" name="txtdep" [(ngModel)]="txtdep"/></td>
+            <td><i class="bi bi-funnel" (click)="filtro()" style="cursor:pointer;color:black;width:50px;"></i> </td>
+            <td colspan="4"></td>
+        </tr>
         <tr>
             <td class="MarcoCompleto" style="width:100px;">Account</td>
             <td class="MarcoCompleto" style="width:100px;">Acct Type</td>
@@ -25,7 +34,8 @@
         <td class="MarcoCompleto">{{ acc.typicalBal }}</td>
         <td class="MarcoCompleto">{{ acc.debitOffset }}</td>
         <td class="MarcoCompleto">{{ acc.creditOffset }}</td>
-        <td class="MarcoCompleto"><input class="form-check-input filled-in" type="checkbox" checked='{{ acc.sts ? "checked" : "" }}' disabled /></td>
+        <td class="MarcoCompleto"><input class="form-check-input filled-in" type="checkbox"
+                checked='{{ acc.sts ? "checked" : "" }}' disabled /></td>
         <td>
             <i class="bi bi-pen" (click)="editar( acc )" style="cursor:pointer;color:green;wi:50px;"></i>
         </td>

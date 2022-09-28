@@ -8,6 +8,10 @@ import { AccountsService } from 'src/app/services/accounts.service';
 })
 export class ListAccountComponent implements OnInit {
   @Input() listaAcc?: Accounts[];
+  txtacc: string = "";
+  txtacct: string = "";
+  txtdesc: string = "";
+  txtdep: string = "";
   constructor(public accountservice: AccountsService) { }
 
   ngOnInit(): void {
@@ -21,7 +25,10 @@ export class ListAccountComponent implements OnInit {
       });
     }
   }
-  editar(acc:Accounts) {
+  editar(acc: Accounts) {
     this.accountservice.actualizar(acc);
+  }
+  filtro() { 
+    this.accountservice.obtenerCuentasFiltradas(this.txtacc,this.txtacct,this.txtdesc,this.txtdep);
   }
 }

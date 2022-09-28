@@ -9,6 +9,13 @@
       {
         "label": "off"
       }
+    ],
+    "axe/text-alternatives": "off",
+    "axe/parsing": [
+      "default",
+      {
+        "duplicate-id-active": "off"
+      }
     ]
   }
 }
