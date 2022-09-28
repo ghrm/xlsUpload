@@ -1,38 +1,101 @@
-<table style="width:350px;border-style:none;border-width:0px;" border="0">
-    <tr>
-        <td style="width:50px;background-color: lightblue;">Account</td>
-        <td><input inputmode="numeric" /></td>
-    </tr>
-    <tr>
-        <td style="width:50px;background-color: lightblue;">Acct Type</td>
-        <td><input inputmode="numeric" /></td>
-    </tr>
-    <tr>
-        <td style="width:50px;background-color: lightblue;">Description</td>
-        <td><input inputmode="numeric" /></td>
-    </tr>
-    <tr>
-        <td style="width:50px;background-color: lightblue;">Deparment</td>
-        <td><input inputmode="numeric" /></td>
-    </tr>
-    <tr>
-        <td style="width:50px;background-color: lightblue;">Typical Bal</td>
-        <td><input inputmode="numeric" /></td>
-    </tr>
-    <tr>
-        <td style="width:100px;background-color: lightblue;">Debit Offset</td>
-        <td><input inputmode="numeric" /></td>
-    </tr>
-    <tr>
-        <td style="width:100px;background-color: lightblue;">Credit Offset</td>
-        <td><input inputmode="numeric" /></td>
-    </tr>
-    <tr>
-        <td class="titulo" style="width:50px;background-color: lightblue;">sts</td>
-        <td><input inputmode="numeric" /></td>
-    </tr>
-    <tr>
-        <td colspan="1" style="width:50px;background-color: lightblue;" class="MarcoCompleto">Controles</td>
-        <td><input inputmode="numeric" /></td>
-    </tr>
-</table>
+<form [formGroup]="form1" (ngSubmit)="guardar()">
+    <div class="form-group">
+        <div class="input-group">
+            <div class="input-group-prepend">
+                <div class="input-group-text bg-white">
+                    <i class="bi bi-bookmark" [class.green-icon]="this.form1.get('account')?.valid" [class.red-icon]="
+                this.form1.get('account')?.invalid && this.form1.get('account')?.touched"></i>
+                </div>
+            </div>
+            <input type="text" class="form-control" placeholder="Account" formControlName="account" value=""
+                maxlength="100" [class.green-icon]="this.form1.get('account')?.valid"
+                [class.red-icon]="this.form1.get('account')?.invalid && this.form1.get('account')?.touched" />
+        </div>
+        <div class="input-group">
+            <div class="input-group-prepend">
+                <div class="input-group-text bg-white">
+                    <i class="bi bi-bookmark" [class.green-icon]="this.form1.get('accttype')?.valid" [class.red-icon]="
+                this.form1.get('accttype')?.invalid && this.form1.get('accttype')?.touched"></i>
+                </div>
+            </div>
+            <input type="text" class="form-control" placeholder="Acct Type" formControlName="accttype" value=""
+                maxlength="100" [class.green-icon]="this.form1.get('accttype')?.valid"
+                [class.red-icon]="this.form1.get('accttype')?.invalid && this.form1.get('accttype')?.touched" />
+        </div>
+        <div class="input-group">
+            <div class="input-group-prepend">
+                <div class="input-group-text bg-white">
+                    <i class="bi bi-bookmark" [class.green-icon]="this.form1.get('description')?.valid"
+                        [class.red-icon]="
+                this.form1.get('description')?.invalid && this.form1.get('description')?.touched"></i>
+                </div>
+            </div>
+            <input type="text" class="form-control" placeholder="Description" formControlName="description" value=""
+                maxlength="100" [class.green-icon]="this.form1.get('description')?.valid"
+                [class.red-icon]="this.form1.get('description')?.invalid && this.form1.get('description')?.touched" />
+        </div>
+        <div class="input-group">
+            <div class="input-group-prepend">
+                <div class="input-group-text bg-white">
+                    <i class="bi bi-bookmark" [class.green-icon]="this.form1.get('deparment')?.valid" [class.red-icon]="
+                this.form1.get('description')?.invalid && this.form1.get('deparment')?.touched"></i>
+                </div>
+            </div>
+            <input type="text" class="form-control" placeholder="Deparment" formControlName="deparment" value=""
+                maxlength="100" [class.green-icon]="this.form1.get('deparment')?.valid"
+                [class.red-icon]="this.form1.get('deparment')?.invalid && this.form1.get('deparment')?.touched" />
+        </div>
+        <div class="input-group">
+            <div class="input-group-prepend">
+                <div class="input-group-text bg-white">
+                    <i class="bi bi-bookmark" [class.green-icon]="this.form1.get('typicalBal')?.valid" [class.red-icon]="
+                this.form1.get('typicalBal')?.invalid && this.form1.get('typicalBal')?.touched"></i>
+                </div>
+            </div>
+            <input type="text" class="form-control" placeholder="Typical Bal" formControlName="typicalBal" value=""
+                maxlength="100" [class.green-icon]="this.form1.get('typicalBal')?.valid"
+                [class.red-icon]="this.form1.get('typicalBal')?.invalid && this.form1.get('typicalBal')?.touched" />
+        </div>
+        <div class="input-group">
+            <div class="input-group-prepend">
+                <div class="input-group-text bg-white">
+                    <i class="bi bi-bookmark" [class.green-icon]="this.form1.get('debitOffset')?.valid"
+                        [class.red-icon]="
+                this.form1.get('debitOffset')?.invalid && this.form1.get('debitOffset')?.touched"></i>
+                </div>
+            </div>
+            <input type="text" class="form-control" placeholder="Debit Offset" formControlName="debitOffset" value=""
+                maxlength="100" [class.green-icon]="this.form1.get('debitOffset')?.valid"
+                [class.red-icon]="this.form1.get('debitOffset')?.invalid && this.form1.get('debitOffset')?.touched" />
+        </div>
+        <div class="input-group">
+            <div class="input-group-prepend">
+                <div class="input-group-text bg-white">
+                    <i class="bi bi-bookmark" [class.green-icon]="this.form1.get('creditOffset')?.valid"
+                        [class.red-icon]="
+                this.form1.get('creditOffset')?.invalid && this.form1.get('creditOffset')?.touched"></i>
+                </div>
+            </div>
+            <input type="text" class="form-control" placeholder="Credit Offset" formControlName="creditOffset" value=""
+                maxlength="100" [class.green-icon]="this.form1.get('creditOffset')?.valid"
+                [class.red-icon]="this.form1.get('creditOffset')?.invalid && this.form1.get('creditOffset')?.touched" />
+        </div>
+        <div class="input-group">
+            <div class="input-group-prepend">
+                <div class="input-group-text bg-white">
+                    <i class="bi bi-bookmark" [class.green-icon]="this.form1.get('sts')?.valid" [class.red-icon]="
+                this.form1.get('sts')?.invalid && this.form1.get('sts')?.touched"></i>
+                </div>
+            </div>
+            Status
+            <input type="checkbox" formControlName="sts" value="false" [class.green-icon]="this.form1.get('sts')?.valid"
+                [class.red-icon]="this.form1.get('sts')?.invalid && this.form1.get('sts')?.touched" />
+        </div>
+    </div>
+    <div class="div-form-group">
+        <button class="btn btn-success btn-lg btn-block" [disabled]="form1.invalid" type="submit"><i
+                class="bi bi-save"></i> Aceptar</button>
+        <button class="btn btn-primary btn-lg btn-block bi-trash3" (click)="limpiar();" type="button"><i class="bi"></i>
+            Limpiar</button>
+    </div>
+</form>

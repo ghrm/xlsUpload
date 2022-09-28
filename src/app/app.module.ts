@@ -9,6 +9,7 @@ import { AccountComponent } from './accounts/account/account.component';
 import { ListAccountComponent } from './accounts/list-account/list-account.component';
 import { RouterModule } from "@angular/router";
 import { UploadfileComponent } from "./uploadfile/uploadfile.component";
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -23,17 +24,20 @@ import { UploadfileComponent } from "./uploadfile/uploadfile.component";
   ],
   imports: [
     BrowserModule,
+    FormsModule,
+    ReactiveFormsModule,
+    BrowserModule,
     AppRoutingModule,
     AngularFileUploaderModule,
     RouterModule.forRoot([
-      {path:'',component:AppComponent},
-      {path:'Uploadfile',component:UploadfileComponent},
-      {path:'accounts',component:AccountsComponent}, 
-      {path:'**',component:AppComponent},
+      { path: '', component: AppComponent },
+      { path: 'Uploadfile', component: UploadfileComponent },
+      { path: 'accounts', component: AccountsComponent },
+      { path: '**', component: AppComponent },
     ]),
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { 
+export class AppModule {
 }

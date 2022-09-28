@@ -1,29 +1,38 @@
 /* You can add global styles to this file, and also import other style files */
+input.ng-touched.ng-invalid {
+  border-color: red;
+}
+
+input.ng-valid {
+  border-color: green;
+}
+
+.green-icon {
+  color: green;
+}
+
+.red-icon {
+  color: red;
+}
 .MarcoCompleto {
-    border-style: solid solid solid solid;
-    border-width: 1px;
-    border-color: #000000;
-    text-align: center;
-  }
-  table {
-      width:100%
-  }
-  td {
-    border-style: solid solid solid solid;
-    border-width: 1px;
-    border-color: #000000;
-    text-align: center;
-    text-wrap:normal;
-    font-size:small;
-  }
-  thead {
-      background-color:lightblue;
-      font-size:small;
-      font-weight:bold;
-  }
-  .titulo{
+  border-style: solid solid solid solid;
+  border-width: 1px;
+  border-color: #000000;
+  text-align: center;
+}
+table {
+    width:100%
+}
+td {
+  border-style: solid solid solid solid;
+  border-width: 1px;
+  border-color: #000000;
+  text-align: center;
+  text-wrap:normal;
+  font-size:small;
+}
+thead {
     background-color:lightblue;
     font-size:small;
     font-weight:bold;
-  }
-  
+}

@@ -17,20 +17,20 @@
             <td colspan="1" style="width:50px;" class="MarcoCompleto">Controles</td>
         </tr>
     </thead>
-    <tr>
-        <td class="MarcoCompleto"></td>
-        <td class="MarcoCompleto"></td>
-        <td class="MarcoCompleto"></td>
-        <td class="MarcoCompleto"></td>
-        <td class="MarcoCompleto"></td>
-        <td class="MarcoCompleto"></td>
-        <td class="MarcoCompleto"></td>
-        <td class="MarcoCompleto"><input class="form-check-input filled-in" type="checkbox" checked='' disabled /></td>
+    <tr *ngFor="let acc of accountservice.lista">
+        <td class="MarcoCompleto">{{ acc.account }}</td>
+        <td class="MarcoCompleto">{{ acc.acctType }}</td>
+        <td class="MarcoCompleto">{{ acc.description }}</td>
+        <td class="MarcoCompleto">{{ acc.deparment }}</td>
+        <td class="MarcoCompleto">{{ acc.typicalBal }}</td>
+        <td class="MarcoCompleto">{{ acc.debitOffset }}</td>
+        <td class="MarcoCompleto">{{ acc.creditOffset }}</td>
+        <td class="MarcoCompleto"><input class="form-check-input filled-in" type="checkbox" checked='{{ acc.sts ? "checked" : "" }}' disabled /></td>
         <td>
-            <i class="bi bi-pen" (click)="editar()" style="cursor:pointer;color:green;"></i>
+            <i class="bi bi-pen" (click)="editar( acc )" style="cursor:pointer;color:green;wi:50px;"></i>
         </td>
         <td>
-            <i class="bi bi-trash3" (click)="eliminar(0)" style="cursor:pointer;color:red;"></i>
+            <i class="bi bi-trash3" (click)="eliminar( acc.account )" style="cursor:pointer;color:red;"></i>
         </td>
     </tr>
 </table>
