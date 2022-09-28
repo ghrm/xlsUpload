@@ -1,17 +1,18 @@
-<div class="row" style="margin-bottom:15px;">
-  <div class="col-md-3">
-    <input type="file" #file placeholder="Choose file" (change)="uploadFile(file.files)" style="display:none;">
-    <button type="button" class="btn btn-success" (click)="file.click()">Upload File</button>
-  </div>
-  <div class="col-md-4">
-    <span class="upload" *ngIf="progress > 0">
-      {{progress}}%
-    </span>
-    <span class="upload" *ngIf="message">
-      {{message}}
-    </span>
-  </div>
-</div>
-<angular-file-uploader
-      [config]="afuConfig">
-</angular-file-uploader>
+<h1>Accounts</h1>
+<table style="width:100%">
+  <tr>
+    <td>
+      <h2><a routerLink="/Uploadfile">Carga Cuentas </a></h2>
+    </td>
+    <td>
+      <h2><a routerLink="/accounts">ABC Cuentas</a></h2>
+    </td>
+  </tr>
+  <tr>
+    <td colspan="2">
+      <div style="width:100%;height:700px;overflow:scroll;">
+        <router-outlet></router-outlet>
+      </div>
+    </td>
+  </tr>
+</table>
